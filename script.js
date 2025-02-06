@@ -32,7 +32,7 @@ function getRandomColor() {
 }
 function loadGame() {
   gameOver.style.display = "none";
-  colorOptions.style.display = "flex";
+  colorOptions.style.display = "grid";
   // random color for the target color div
   targetColor = getRandomColor();
   targetDiv.style.backgroundColor = targetColor;
@@ -81,7 +81,11 @@ optionDiv.forEach((div) => {
       } while (trialCount < 0);
       if (trialCount === 0) {
         gameOver.style.display = "block";
-        colorOptions.style.display = "none";
+        // disale cursor for colorOPtions
+        colorOptions.style.cursor = "not-allowed";
+        optionDiv.forEach((div) => {
+          div.style.cursor = "not-allowed";
+        });
       }
     }
   });
@@ -93,5 +97,6 @@ restartBtn.addEventListener("click", () => {
   scoreCount.textContent = 0;
   gameOver.style.display = "none";
   gameInstruction.style.display = "block";
+  colorOptions.style.display = "grid";
   loadGame();
 });
