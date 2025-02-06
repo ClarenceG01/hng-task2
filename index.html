@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>Color Game</title>
+</head>
+
+<body>
+    <main>
+        <!-- color options -->
+        <div id="game-over">
+            <h2>Game Over</h2>
+        </div>
+        <!-- target color -->
+        <button data-testid="colorBox" id="target-div"></button>
+        <div id="game-container">
+            <!-- game status -->
+            <div id="result-div">
+                <span id="result-message" data-testid="gameStatus"></span>
+            </div>
+            <!-- Game instructions -->
+            <p id="game-instruction" data-testid="gameInstructions">
+                Pick the matching color
+            </p>
+            <div class="color-options">
+                <button class="color-div color-1" data-testid="colorOption"></button>
+                <button class="color-div color-2" data-testid="colorOption"></button>
+                <button class="color-div color-3" data-testid="colorOption"></button>
+                <button class="color-div color-4" data-testid="colorOption"></button>
+                <button class="color-div color-5" data-testid="colorOption"></button>
+                <button class="color-div color-6" data-testid="colorOption"></button>
+            </div>
+        </div>
+        <div>
+            <!-- correct or wrong move -->
+            <div class="footer">
+                <span class="scores">Score:<b><span id="score-count" data-testid="score">0</span></b></span>
+                <button id="restart-game" data-testid="newGameButton">Restart Game</button>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

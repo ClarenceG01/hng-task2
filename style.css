@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #606c38;
+}
+main {
+  height: calc(100vh - 4rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #fefae0;
+  margin: 1rem 3rem;
+  border-radius: 1rem;
+  padding: 0.5rem 2rem;
+  position: relative;
+}
+#target-div {
+  margin: 0 auto;
+}
+#game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#game-instruction {
+  font-size: 1.4rem;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+}
+.color-div,
+#target-div {
+  width: 7rem;
+  height: 5rem;
+  cursor: pointer;
+}
+.color-div:hover {
+  transform: scale(1.05);
+  transition: transform ease-in-out 0.3s;
+}
+main h2 {
+  font-size: 1.3rem;
+  font-family: "Poppins", sans-serif;
+}
+.color-options {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 1rem; /* Space between buttons */
+  padding: 1rem;
+  border-radius: 1rem;
+  max-width: 400px; /* Optional: Limit width */
+  margin: auto; /* Center it */
+}
+
+/* Button styling */
+.color-div {
+  width: 7rem;
+  height: 5rem;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+  border: none;
+}
+
+/* Hover effect */
+.color-div:hover {
+  transform: scale(1.05);
+}
+
+.scores {
+  font-size: 1.3rem;
+  font-family: "Inter", sans-serif;
+}
+#result-div {
+  font-family: "Poppins", sans-serif;
+  font-weight: bolder;
+  font-size: 1.3rem;
+}
+/* #game-over { */
+/* display: none; */
+/* font-family: "Poppins", sans-serif; */
+/* } */
+#restart-game {
+  background-color: #606c38;
+  border: 1px solid #283618;
+  color: #fefae0;
+  padding: 0.5rem 1.25rem;
+  cursor: pointer;
+  border-radius: 0.75rem;
+  margin: 0.5rem 0;
+}
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+#result-message {
+  animation: bounce 1s infinite;
+}
+/* Responsive: 1 column on mobile */
+@media (max-width: 520px) {
+  main {
+    margin: 1rem 1rem;
+  }
+  .color-options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #game-container {
+    padding: 0;
+  }
+  #result-div {
+    font-size: 1rem;
+  }
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(2px);
+    }
+  }
+}
